@@ -11,6 +11,12 @@ namespace TARgv24_C
         public static void Main(string[] args)
         {
             //II. osa Kordused, Massivid, Listid, Klassid
+            List<string> sonad = FunktsioonideClass_2osa.Sõnad();
+            foreach (var item in sonad)
+            {
+                Console.WriteLine(item);
+            }
+
             Isik isik1  = new Isik("Juku", 65, "12345678901", "Tallinn");
             isik1.PrindiInfo();
             Isik isik2 = new Isik();
@@ -22,35 +28,26 @@ namespace TARgv24_C
             
          
             int i;
-            Console.WriteLine("------ for++Massiv ------");
-            Isik[] isikud = new Isik[10];
+
             string[] nimed = new string[10] {"Juku", "Mari", "Kati", "Mati", "Liina", "Katrin", "Andres", "Marko", "Kristi", "Jana"};
-            string[] aadressid = new string[10] {"Tallinn", "Tartu", "", "", "", "", "", "", "", "" };
-            for (i = 0; i < 10; i++)
-            {
-                Console.WriteLine(i);
-                //isikud[i] =new Isik();
-                isikud[i] = new Isik
-                {
-                    Nimi = nimed[i],
-                    Vanus = 50,
-                    Isikukood = "1234567890" + i,
-                    Aadress = "Tallinn" + i
-                };
-            }
-            for (i = 0; i<10; i++)
+            string[] aadressid = new string[10] {"Tallinn", "Tartu", "Parnu", "Narva", "Kohtla-Jarve", "Vijandi", "Rakvere", "Paide", "Johvi", "Kuressaare" };
+            Console.WriteLine("------ for++Massiv ------");
+            Isik[] isikud = FunktsioonideClass_2osa.Isikud(nimed.Length, nimed, aadressid);
+            for (i = 0; i < nimed.Length; i++)
             {
                 isikud[i].PrindiInfo();
-
             }
 
+           
+            Console.WriteLine("------ for--List ------");
+            List<Isik> isikud2 = FunktsioonideClass_2osa.Isikud2(nimed.Length, nimed, aadressid);
 
-
-            Console.WriteLine("------ for-- ------");
-            for (int j = i; j > 0; j--)
+            foreach (Isik isik in isikud2)
             {
-                Console.WriteLine(j);
+                isik.PrindiInfo();
             }
+
+
             Console.WriteLine("------ while ------");
             while (i>=0)
             {
