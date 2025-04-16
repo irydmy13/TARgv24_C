@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TARgv24_C
 {
-    internal class FunktsioonideClass
+    internal class FunktsioonideClass_1osa
     {
         // Funktsioon tervitamiseks
         public static string Tervita(string nimi)
